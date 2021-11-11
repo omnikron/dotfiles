@@ -8,11 +8,15 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 # Is this annoying? possibly.
 export LESS="--no-init --quit-if-one-screen -R"
 
-# chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
 alias ctags=/usr/local/Cellar/universal-ctags/HEAD-217cdf1/bin/ctags
+
+alias be='bundle exec'
+
+alias yarn=npm_yarn
+npm_yarn() {
+  echo "use npm run instead, idiot 👹"
+  npm run "$@"
+}
 
 if [ -f ~/.zsh_aliases ]; then
 	. ~/.zsh_aliases
@@ -73,8 +77,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # bindings for pgup/pgdown during autocomplete
 bindkey "^[[5~" history-beginning-search-backward
 bindkey "^[[6~" history-beginning-search-forward
-
-
 
 export PROMPT=$PROMPT'$(kube_ps1)'
 kubeoff # kubeon to turn kube_ps1 on
