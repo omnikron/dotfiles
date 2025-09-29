@@ -1,5 +1,5 @@
 # Profiling zsh startup (see end)
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 # Speed up compinit by checking cached .zcompdump only once per day
 autoload -Uz compinit
@@ -137,4 +137,4 @@ eval "$(scmpuff init -s)"
 eval "$(zoxide init zsh --cmd c)"
 
 # Profiling zsh startup (see beginning)
-zprof
+# zprof
